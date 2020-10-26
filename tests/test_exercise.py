@@ -4,7 +4,7 @@ import os
 def test_exercise():
     os.chdir('src')
 
-    import exercise
+    import src.exercise
 
     input_values = ["data.csv","FURIA","data.csv","ENCE"]
     output = []
@@ -17,15 +17,15 @@ def test_exercise():
             output.append("")
             return input_values.pop(0)
 
-    exercise.input = mock_input
-    exercise.print = lambda s : output.append(s)
+    src.exercise.input = mock_input
+    src.exercise.print = lambda s : output.append(s)
 
-    exercise.main()
+    src.exercise.main()
 
-    exercise.input = mock_input
-    exercise.print = lambda s : output.append(s)
+    src.exercise.input = mock_input
+    src.exercise.print = lambda s : output.append(s)
 
-    exercise.main()
+    src.exercise.main()
 
     assert output == ["File:","Team:","Games: 2","Wins: 1","Losses: 1",\
                       "File:","Team:","Games: 6","Wins: 3","Losses: 3"]
