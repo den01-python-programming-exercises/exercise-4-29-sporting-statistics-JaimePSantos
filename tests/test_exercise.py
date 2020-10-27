@@ -1,11 +1,8 @@
 import pytest
 import os
-
+import src.exercise as exercise
 def test_exercise():
     os.chdir('src')
-
-    import exercise
-
     input_values = ["data.csv","FURIA","data.csv","ENCE"]
     output = []
 
